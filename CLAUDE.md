@@ -37,6 +37,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | If the user wants to... | Use this skill |
 |---|---|
 | Run end-to-end funnel analysis from Mixpanel data | `skills/anyreach-funnel-analysis/` |
+| Generate a demo bot usage report PDF from a conversations CSV | `skills/demo-bot-usage-report/` |
 | Generate a Consumer Intelligence PDF from review data | `skills/cx-intel-report-pdf/` |
 | Generate the companion XLSX data export for a CX Intel report | `skills/cx-intel-report-xlsx/` |
 | Quantify leverage/power dynamics in a negotiation | `skills/leverage-analysis/` |

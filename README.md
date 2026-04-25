@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (18 skills)
+## Skills Catalog (19 skills)
 
 ### Research & Intelligence
 
@@ -57,6 +57,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | Skill | Trigger Phrases | Output |
 |---|---|---|
 | **[anyreach-funnel-analysis](skills/anyreach-funnel-analysis/)** | "run the funnel analysis", "check conversion rates", "how's the funnel?" | PDF report — acquisition, onboarding, activation metrics, dropoffs, recommendations |
+| **[demo-bot-usage-report](skills/demo-bot-usage-report/)** | "create a usage report from this CSV", "analyze the bot calls", "build a partner report" | Branded 10-page PDF — topics, duration, capabilities, sentiment, verbatim quotes, partner takeaways |
 | **[cx-intel-report-pdf](skills/cx-intel-report-pdf/)** | "generate CX report", "consumer intelligence report" | 12-section PDF — executive summary through strategic recommendations |
 | **[cx-intel-report-xlsx](skills/cx-intel-report-xlsx/)** | "generate the XLSX", "create the data export" | 5-sheet Excel workbook — reviews, themes, benchmarking, competitor deep dives |
 | **[leverage-analysis](skills/leverage-analysis/)** | "who has leverage?", "quantify power dynamics", "score the relationship" | Interactive React dashboard — leverage scoring, financial exposure, game theory |
@@ -124,6 +125,7 @@ claude-skills/
 │   ├── calls/                             # Sales call analysis (3 modes)
 │   ├── company-deep-research/             # Company GTM research
 │   ├── competitor-deep-dive/              # Competitor battle cards
+│   ├── demo-bot-usage-report/              # Bot usage report from CSV
 │   ├── cx-intel-report-pdf/               # Consumer intel PDF
 │   ├── cx-intel-report-xlsx/              # Consumer intel XLSX
 │   ├── deploy-intel/                      # Cloud Run deployment
