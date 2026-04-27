@@ -1,0 +1,169 @@
+{
+  "bpo": {
+    "name": "Startek",
+    "label": "BPO",
+    "logo_path": "startek_logo.png",
+    "brand": {
+      "navy": "#003D6B",
+      "accent": "#E92983"
+    }
+  },
+  "ai_partner": {
+    "name": "Anyreach AI"
+  },
+  "end_client": {
+    "name": "Fabletics",
+    "short_name": "Fabletics"
+  },
+  "engagement_label": "Member Experience Partnership",
+
+  "page1": {
+    "title": "Outcomes-Based Member Experience",
+    "subtitle": "AI + Human, One Vendor, One Price"
+  },
+
+  "current_state": {
+    "volumes": {
+      "voice": 1820000,
+      "chat": 2410000,
+      "social": 444000
+    },
+    "fte_count": 900,
+    "fte_hourly_rate": 10,
+    "ai_containment_rate": 0.225,
+    "containment_source": "AI containment sourced from Fabletics Q&A response (Julie Barton, Dec 5, 2025): \"Roughly 20–25% of inquiries are handled by self-service or chatbot tools.\"",
+    "annual_revenue": 1000000000,
+    "channels_display": "chat · voice · WhatsApp",
+    "ai_vendor": {
+      "name": "Cognigy",
+      "estimated_rates": {
+        "voice": 0.55,
+        "chat": 0.60,
+        "social": 0.65,
+        "platform_base": 150000
+      }
+    }
+  },
+
+  "tech_stack": ["Zendesk", "Medallia", "Helpjuice", "Cognigy", "Genesys"],
+  "voc_tool_footnote": "Medallia confirmed as Fabletics VoC tool per Q&A response: \"Feedback is collected via Medallia.\"",
+
+  "revenue_generation": {
+    "annual_estimate": 38400000,
+    "source_note": "Revenue generation (AI shopping assistant, cart abandonment, VIP conversion, intl expansion, lifecycle outreach, 24/7 sales capture) requires engagement beyond Global Member Services scope per Fabletics Q&A. Directional; subject to discovery validation."
+  },
+
+  "use_cases": [
+    {
+      "name": "Billing Dispute Resolution",
+      "definition": "Dispute <b>closed</b>, no re-open within 48 hrs, <b>no chargeback</b> filed downstream.",
+      "attribution": "Zendesk ticket status · 48hr recontact rate · Payment-gateway chargeback flag · Post-resolution CSAT"
+    },
+    {
+      "name": "Skip / Cancel Flow",
+      "definition": "Member action completed, no re-contact on the same cycle, no inbound complaint filed.",
+      "attribution": "Billing-system action flag · Same-cycle recontact rate · Complaint-ticket tag · Deflection rate"
+    },
+    {
+      "name": "Retention Save",
+      "definition": "Member <b>stays past the save window</b>, next billing cycle completes without cancellation.",
+      "attribution": "Subscription status · Next-cycle completion flag · Save-offer acceptance · 30-day retention cohort"
+    },
+    {
+      "name": "Shipping / Delay Inquiry",
+      "definition": "Tracking provided <b>or</b> credit issued; no follow-up contact on the same shipment.",
+      "attribution": "OMS credit-issued flag · Tracking-link delivery · Shipment-ID recontact rate · Delivery confirmation"
+    },
+    {
+      "name": "VIP / Black Tier Concierge",
+      "definition": "Routed, resolved, and <b>NPS captured</b> within the same interaction thread.",
+      "attribution": "Routing SLA · Resolution confirmation · Medallia NPS capture · Tier-specific CSAT"
+    }
+  ],
+
+  "priorities": [
+    {
+      "name": "Membership Billing Confusion",
+      "description": "Proactive <b>AI education at sign-up</b>; skip-deadline reminders before the bill posts — direct fix for the #1 churn driver."
+    },
+    {
+      "name": "3-Attempt Save Strategy",
+      "description": "AI-assisted retention with <b>savings history & earned perks</b> surfaced in real-time; supervisor exceptions flow intact."
+    },
+    {
+      "name": "Ace / Maven / Newcomer Segmentation",
+      "description": "Tone, offer, and channel <b>personalized per segment</b> — no scripting required."
+    },
+    {
+      "name": "Surge Capacity & Elasticity",
+      "description": "First 10 days of cycle, Cyber Week, launches: <b>AI scales instantly</b>, no BPO staffing flex needed."
+    },
+    {
+      "name": "Black Tier Concierge",
+      "description": "High-value segment: clear outcome signal, fast NPS feedback loop. Candidate for lighthouse pilot (pg. 3)."
+    }
+  ],
+
+  "target_kpis": [
+    "Improve member retention rate",
+    "Increase MSAT YoY across all channels",
+    "Reduce repeat contact rate",
+    "100% QA coverage & real-time feedback",
+    "Reduce time to proficiency (new hires)",
+    "Elevate digital support trust & accuracy"
+  ],
+  "target_kpis_footnote": "Target KPIs sourced from Fabletics Q&A response, Section 5 (Vision and Goals for 2026).",
+
+  "path_forward": [
+    "30-min ROI walk-through with Tom, Julie, Dan",
+    "Discovery workshop to validate outcome definitions",
+    "Fabletics names IT POC (Genesys · CRM · Helpjuice)",
+    "Startek prepares SOW for 6–8 wk lighthouse pilot"
+  ],
+
+  "lighthouse": {
+    "volume_share": 0.35,
+    "target_containment": 0.65
+  },
+
+  "pilot": {
+    "name": "Billing / Skip / Credit Automation",
+    "description": "Rules-based, non-retention, non-escalation — the single lowest-risk, highest-ROI category in the entire Fabletics contact mix. Directly addresses the #1 pain point surfaced by Julie's team: \"members not understanding skip deadlines\" and \"feeling tricked by VIP membership.\"",
+    "timeline": "6–8 Week Path to Live",
+    "timeline_short": "6–8 wks",
+    "why_first": [
+      "<b>35% of all contacts</b> (~1.65M/yr) — single largest driver",
+      "<b>Rules-based</b> decision trees (skip Y/N, credit lookup, charge explanation) — no policy judgment",
+      "<b>Knowledge base documented</b> in Helpjuice (skip deadline, $59.95 charge, credits)",
+      "<b>Non-retention, non-escalation</b> — lowest-risk category",
+      "<b>Direct, auditable ROI</b> from Day 1"
+    ],
+    "what_we_stand_up": [
+      "AI voice + chat agent on <b>Genesys</b> — English & Spanish",
+      "Proactive <b>skip-deadline reminder</b> outbound — 48 hrs before the 5th",
+      "<b>Warm transfer</b> to Startek agents with full context — no re-explaining",
+      "Real-time <b>containment, AHT, CSAT</b> dashboard for ops",
+      "Zendesk / Helpjuice / Medallia integrations wired in"
+    ],
+    "what_client_does": [
+      "<b>15–23 hours total</b> over 6–8 weeks — split across Julie, Dan, and one IT contact",
+      "<b>No dedicated FTE</b>, no new hires, no IT buildout — we plug into Genesys, CRM, Helpjuice, Zendesk",
+      "Anyreach + Startek absorb <b>95%+ of implementation effort</b>",
+      "One named IT POC to unblock API / system access"
+    ],
+    "commercial_offer": [
+      "<b>One vendor, one price</b> — replaces Cognigy + a portion of current BPO",
+      "Priced <b>per resolved member outcome</b> — not per hour or per token",
+      "Resolution = query addressed with <b>no repeat contact within 48 hrs</b>",
+      "<b>Ramp risk on us</b> — containment misses hit our margin, not your invoice",
+      "Joint validation period defined in SOW before volumes scale"
+    ],
+    "phase2_unlocks": "Shipping / WISMO · Retention Save · Training needs analysis automation · 100% AI-assisted QA"
+  },
+
+  "decision_steps": [
+    {"title": "30-min alignment call", "detail": "Tom, Julie, Dan"},
+    {"title": "One IT contact named", "detail": "Genesys + CRM + Helpjuice"},
+    {"title": "SOW signed → 6–8 wk pilot build", "detail": "Within Fabletics' 4–6 mo. eval window"}
+  ]
+}
