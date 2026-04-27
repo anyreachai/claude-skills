@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ end_client.name }} Member Experience · ROI Brief</title>
+<style>
+  :root{
+    --navy:{{ brand.navy }};
+    --navy-dark:{{ brand.navy_dark }};
+    --navy-deep:{{ brand.navy_deep }};
+    --pink:{{ brand.accent }};
+    --pink-soft:{{ brand.accent_soft }};
+    --green:#1D7366;
+    --text:#14293D;
+    --text-mute:#5D758D;
+    --border:#E3E8ED;
+    --bg:#F6F8FA;
+    --card:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:var(--bg);font-family:'Helvetica Neue','Inter','Segoe UI',Arial,sans-serif;color:var(--text);}
+  .page{
+    width:13.33in; height:7.5in;
+    background:var(--bg);
+    position:relative;
+    page-break-after:always;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .page:last-of-type{page-break-after:auto;}
+
+  .header{
+    flex:0 0 64px;
+    background:var(--navy);
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+    position:relative;
+  }
+  .header::after{
+    content:""; position:absolute; top:0; right:0;
+    width:140px; height:6px; background:var(--pink);
+  }
+  .logo-block{display:flex;align-items:center;gap:16px;}
+  .logo{height:28px;}
+  .powered{
+    color:#FFFFFF; font-size:9px; line-height:1.2;
+    border-left:1px solid rgba(255,255,255,0.3); padding-left:14px;
+  }
+  .powered .pw-label{color:rgba(255,255,255,0.75);font-size:8.5px;letter-spacing:0.3px;}
+  .powered .pw-name{font-weight:600;letter-spacing:0.2px;}
+  .header-right{
+    margin-left:auto;text-align:right;color:#FFFFFF;
+    font-size:10px;line-height:1.3;padding-right:36px;
+  }
+  .header-right .hr-title{font-weight:700;letter-spacing:0.1px;font-size:10.5px;}
+  .header-right .hr-sub{color:rgba(255,255,255,0.78);font-size:9px;}
+
+  .title-row{
+    flex:0 0 auto;padding:14px 40px 10px 40px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .title-row h1{
+    font-size:20px;font-weight:600;color:var(--text);
+    letter-spacing:-0.2px;line-height:1.15;
+  }
+  .title-row h1 .tagline{
+    font-weight:400;color:var(--text-mute);font-size:12.5px;margin-left:6px;
+  }
+  .badge-right{
+    background:#FFFFFF;border:1px solid var(--border);
+    border-radius:6px;padding:6px 14px;
+    display:flex;align-items:center;gap:10px;min-width:170px;
+  }
+  .badge-right .br-label{
+    font-size:8.5px;color:var(--text-mute);letter-spacing:0.4px;font-weight:600;line-height:1.2;
+  }
+  .badge-right .br-value{
+    font-size:20px;font-weight:700;color:var(--green);letter-spacing:-0.3px;line-height:1;
+  }
+
+  .body{
+    flex:1 1 auto;padding:0 40px 8px 40px;
+    display:flex;flex-direction:column;gap:10px;min-height:0;
+  }
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .two-col > div{display:flex;flex-direction:column;}
+  .two-col > div > .card{flex:1;}
+
+  .section-label{
+    font-size:9.5px;font-weight:600;color:var(--navy);
+    letter-spacing:0.8px;margin-bottom:7px;padding-bottom:3px;
+    border-bottom:2px solid var(--pink);width:fit-content;
+  }
+
+  .card{
+    background:var(--card);border:1px solid var(--border);
+    border-radius:7px;padding:12px 14px;
+  }
+  .card-hl{border:1.5px solid var(--navy);position:relative;}
+  .reco-pill{
+    position:absolute;top:-9px;left:14px;
+    background:var(--pink);color:#FFFFFF;
+    font-size:8px;font-weight:700;letter-spacing:1px;
+    padding:2px 9px;border-radius:3px;
+  }
+  .card h3{font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:3px;}
+  .card p.sub{font-size:10px;color:var(--text-mute);line-height:1.35;}
+
+  .kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0 8px 0;}
+  .kpi-tile{background:#F6F8FA;border-radius:5px;padding:8px 11px;}
+  .kpi-tile .val{font-size:17px;font-weight:700;color:var(--text);line-height:1;}
+  .kpi-tile .val.sm{font-size:14.5px;}
+  .kpi-tile .lbl{font-size:7.5px;color:var(--text-mute);letter-spacing:0.5px;font-weight:600;margin-top:4px;}
+
+  .costs{margin-top:4px;}
+  .cost-line{
+    display:flex;justify-content:space-between;padding:4.5px 0;
+    border-bottom:1px solid var(--border);font-size:10.5px;
+  }
+  .cost-line .lbl{color:var(--text);}
+  .cost-line .val{color:var(--text);font-weight:500;}
+  .cost-line.total{font-weight:700;color:var(--text);border-bottom:none;padding-top:7px;}
+  .cost-line.total .val{color:var(--navy);font-size:12px;}
+
+  .callout{
+    background:var(--pink-soft);border-left:3px solid var(--pink);
+    padding:7px 12px;border-radius:0 4px 4px 0;margin-top:7px;
+  }
+  .callout .lbl{font-size:8px;color:var(--navy);letter-spacing:0.6px;font-weight:700;}
+  .callout .val{font-size:19px;font-weight:700;color:var(--navy);margin-top:1px;line-height:1;}
+  .callout .note{font-size:9px;color:var(--text-mute);margin-top:4px;line-height:1.3;}
+
+  .price-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:10.5px;}
+  .price-table th,.price-table td{
+    padding:5px 5px;text-align:center;border-bottom:1px solid var(--border);
+  }
+  .price-table th{font-size:10px;font-weight:700;color:var(--text);}
+  .price-table th .sub{font-weight:400;font-size:9px;color:var(--text-mute);display:block;margin-top:1px;}
+  .price-table td:first-child,.price-table th:first-child{text-align:left;color:var(--text-mute);}
+  .price-table td.big{font-size:17px;font-weight:700;color:var(--navy);padding:4px 5px;}
+  .price-table tr.savings td{font-weight:700;color:var(--green);}
+  .price-table tr.savings td:first-child{color:var(--text-mute);font-weight:400;}
+  .price-table .sublbl{font-weight:400;color:var(--text-mute);font-size:9px;display:block;}
+
+  .incl{margin-top:8px;background:#F6F8FA;border-radius:5px;padding:8px 12px;}
+  .incl .incl-title{font-size:8.5px;color:var(--navy);letter-spacing:0.6px;font-weight:700;margin-bottom:4px;}
+  .incl .incl-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:9.5px;color:var(--text);}
+  .incl .incl-grid span b{color:var(--navy);}
+  .incl .incl-grid .chk{color:var(--green);font-weight:700;margin-right:3px;}
+
+  .floor-note{margin-top:6px;font-size:9px;color:var(--text-mute);font-style:italic;line-height:1.35;}
+
+  .msg-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .msg{
+    background:#FFFFFF;border:1px solid var(--border);border-radius:6px;
+    padding:8px 11px 9px 11px;display:flex;gap:9px;
+  }
+  .msg .bubble{
+    background:var(--navy);color:#FFFFFF;
+    width:20px;height:20px;min-width:20px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:10px;margin-top:1px;
+  }
+  .msg .title{font-size:10.5px;font-weight:700;color:var(--text);margin-bottom:2px;}
+  .msg .body-text{font-size:9.5px;color:var(--text-mute);line-height:1.35;}
+  .msg .body-text b{color:var(--text);}
+
+  .value-strip{
+    background:var(--navy-deep);color:#FFFFFF;border-radius:7px;
+    padding:10px 18px;display:flex;align-items:center;gap:18px;
+  }
+  .value-strip .vs-label{font-size:8.5px;letter-spacing:0.8px;color:rgba(255,255,255,0.65);font-weight:600;}
+  .value-strip .vs-head{font-size:15px;font-weight:700;color:#FFFFFF;line-height:1.1;margin-top:2px;}
+  .value-strip .vs-head .accent{color:var(--pink);}
+  .value-strip .vs-head .light{font-weight:400;color:rgba(255,255,255,0.72);font-size:10px;}
+  .value-strip .vs-col{flex:1;}
+  .value-strip .vs-stat{display:flex;flex-direction:column;align-items:flex-start;gap:1px;min-width:100px;}
+  .value-strip .vs-stat .v{color:var(--pink);font-size:14px;font-weight:700;line-height:1;}
+  .value-strip .vs-stat .l{color:rgba(255,255,255,0.7);font-size:8.5px;line-height:1.3;}
+  .value-strip .vs-divider{width:1px;height:38px;background:rgba(255,255,255,0.12);}
+  .value-strip .stats-grid{display:flex;gap:18px;align-items:center;}
+
+  .footer-zone{flex:0 0 auto;padding:6px 40px 8px 40px;}
+  .footnotes{font-size:7.5px;color:var(--text-mute);font-style:italic;line-height:1.4;margin-bottom:5px;}
+  .footnotes sup{color:var(--pink);font-weight:700;margin-right:1px;}
+  .footer{display:flex;justify-content:space-between;font-size:8.5px;color:var(--text-mute);}
+  .footer .conf{color:var(--pink);letter-spacing:1.5px;font-weight:700;}
+
+  sup.footref{font-size:7.5px;color:var(--pink);font-weight:700;margin-left:1px;vertical-align:super;}
+
+  /* PAGE 2 */
+  .stake-hero{
+    background:var(--navy-dark);border-radius:8px;
+    padding:16px 22px 17px 22px;color:#FFFFFF;
+    position:relative;overflow:hidden;
+  }
+  .stake-hero::after{
+    content:"";position:absolute;right:-40px;top:-40px;
+    width:160px;height:160px;
+    background:radial-gradient(circle, rgba(233,41,131,0.35) 0%, rgba(233,41,131,0) 70%);
+    pointer-events:none;
+  }
+  .stake-hero .label{font-size:10px;letter-spacing:1.4px;color:var(--pink);font-weight:700;margin-bottom:5px;}
+  .stake-hero h2{font-size:16.5px;font-weight:600;line-height:1.3;max-width:1180px;}
+  .stake-hero h2 .hl{color:var(--pink);font-weight:700;}
+  .stake-hero .fineprint{font-size:10px;color:rgba(255,255,255,0.72);margin-top:7px;font-style:italic;}
+
+  .defs-head{
+    font-size:12px;font-weight:700;letter-spacing:0.7px;color:var(--text);
+    padding-bottom:4px;border-bottom:2px solid var(--pink);margin-bottom:10px;width:fit-content;
+  }
+  .def-row{
+    display:grid;grid-template-columns:160px 1fr;gap:14px;
+    padding:9px 0;border-bottom:1px solid var(--border);
+  }
+  .def-row:last-child{border-bottom:none;}
+  .def-row .def-name{font-weight:700;color:var(--text);font-size:11.5px;line-height:1.25;}
+  .def-row .def-body{color:var(--text);line-height:1.4;font-size:11px;}
+  .def-row .def-body b{font-weight:700;}
+  .def-row .attr{font-size:10px;color:var(--text-mute);margin-top:5px;line-height:1.35;}
+  .def-row .attr .lbl{color:var(--pink);font-weight:700;letter-spacing:0.5px;margin-right:4px;font-size:9px;}
+
+  .priorities-list .pr{
+    display:grid;grid-template-columns:180px 1fr;gap:14px;
+    padding:9px 0;border-bottom:1px solid var(--border);
+  }
+  .priorities-list .pr:last-child{border-bottom:none;}
+  .priorities-list .pr .name{font-weight:700;color:var(--text);font-size:11.5px;line-height:1.25;}
+  .priorities-list .pr .body-text{color:var(--text);line-height:1.4;font-size:11px;}
+  .priorities-list .pr .body-text b{color:var(--navy);font-weight:700;}
+
+  .kpi-align{background:#F6F8FA;border-radius:6px;padding:11px 14px;margin-top:10px;}
+  .kpi-align .title{font-size:10px;color:var(--navy);letter-spacing:0.6px;font-weight:700;margin-bottom:6px;}
+  .kpi-align .items{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:4px 16px;font-size:10.5px;color:var(--text);
+  }
+  .kpi-align .items span{line-height:1.4;}
+  .kpi-align .items span::before{content:"→";color:var(--pink);margin-right:5px;font-weight:700;}
+
+  .path-forward{
+    background:#FFFFFF;border:1px solid var(--border);border-radius:7px;
+    padding:11px 16px;display:flex;align-items:center;gap:14px;
+  }
+  .path-forward .pf-label{
+    font-size:10px;font-weight:700;color:var(--pink);
+    letter-spacing:0.8px;line-height:1.15;min-width:88px;
+    padding-right:12px;border-right:1px solid var(--border);
+  }
+  .path-forward .pf-label span{font-weight:400;color:var(--text-mute);display:block;font-size:8.5px;letter-spacing:0.8px;margin-top:2px;}
+  .path-forward .pf-step{
+    display:flex;align-items:center;gap:9px;flex:1;
+    font-size:10.5px;color:var(--text);line-height:1.3;
+  }
+  .path-forward .pf-step .num{
+    background:var(--navy);color:#FFFFFF;
+    width:20px;height:20px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;min-width:20px;
+  }
+
+  /* PAGE 3 */
+  .lighthouse-hero{
+    background:var(--navy-dark);border-radius:8px;
+    padding:18px 24px 20px 24px;color:#FFFFFF;
+    position:relative;overflow:hidden;
+  }
+  .lighthouse-hero::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at right, rgba(233,41,131,0.25) 0%, rgba(233,41,131,0) 50%);
+    pointer-events:none;
+  }
+  .lighthouse-hero .label{font-size:10.5px;letter-spacing:1.4px;color:var(--pink);font-weight:700;margin-bottom:4px;}
+  .lighthouse-hero .lh-top{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;position:relative;z-index:1;}
+  .lighthouse-hero h2{font-size:24px;font-weight:700;line-height:1.15;margin-bottom:5px;}
+  .lighthouse-hero .lh-desc{font-size:11.5px;color:rgba(255,255,255,0.82);line-height:1.45;max-width:720px;}
+  .lighthouse-hero .lh-stats{display:flex;align-items:flex-end;gap:28px;}
+  .lighthouse-hero .stat .v{font-size:23px;font-weight:700;color:var(--pink);line-height:1;}
+  .lighthouse-hero .stat .l{font-size:10px;color:rgba(255,255,255,0.7);letter-spacing:0.8px;margin-top:4px;text-transform:uppercase;}
+
+  .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .pilot-card{background:#FFFFFF;border:1px solid var(--border);border-radius:7px;padding:13px 15px 14px 15px;}
+  .pilot-card .num-head{
+    display:flex;align-items:center;gap:8px;
+    padding-bottom:6px;margin-bottom:9px;border-bottom:2px solid var(--pink);
+  }
+  .pilot-card .num-head .num{
+    background:var(--navy);color:#FFFFFF;
+    width:21px;height:21px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10.5px;font-weight:700;
+  }
+  .pilot-card .num-head .t{font-size:10.5px;font-weight:700;color:var(--text);letter-spacing:0.5px;}
+  .pilot-card ul{list-style:none;padding:0;margin:0;}
+  .pilot-card li{
+    font-size:11px;color:var(--text);line-height:1.45;
+    padding-left:12px;position:relative;margin-bottom:7px;
+  }
+  .pilot-card li:last-child{margin-bottom:0;}
+  .pilot-card li::before{content:"•";position:absolute;left:0;top:0;color:var(--pink);font-weight:700;}
+  .pilot-card li b{color:var(--navy);font-weight:700;}
+
+  .value-summary{
+    background:var(--navy-deep);color:#FFFFFF;border-radius:8px;
+    padding:14px 22px;display:flex;align-items:center;gap:24px;
+  }
+  .value-summary .vs-lbl{font-size:10px;letter-spacing:0.8px;color:var(--pink);font-weight:700;line-height:1.15;}
+  .value-summary .vs-lbl span{
+    color:rgba(255,255,255,0.65);font-weight:400;font-size:9px;display:block;
+    margin-top:2px;text-transform:uppercase;letter-spacing:0.8px;
+  }
+  .value-summary .vs-cell{display:flex;flex-direction:column;gap:2px;}
+  .value-summary .vs-cell .v{font-size:19px;font-weight:700;color:#FFFFFF;line-height:1;}
+  .value-summary .vs-cell .l{font-size:10px;color:rgba(255,255,255,0.72);line-height:1.35;}
+  .value-summary .divider{width:1px;height:42px;background:rgba(255,255,255,0.15);}
+  .value-summary .p2{margin-left:auto;text-align:right;}
+  .value-summary .p2 .t{font-size:10px;letter-spacing:0.8px;color:rgba(255,255,255,0.65);font-weight:600;}
+  .value-summary .p2 .body-text{font-size:10px;color:#FFFFFF;line-height:1.4;max-width:230px;margin-top:3px;}
+
+  .decision-strip{
+    border:1.5px solid var(--pink);border-radius:7px;
+    padding:10px 18px;display:flex;align-items:center;gap:14px;background:#FFFFFF;
+  }
+  .decision-strip .ds-label{
+    font-size:11px;font-weight:700;color:var(--pink);
+    letter-spacing:1px;line-height:1.1;min-width:95px;
+    padding-right:12px;border-right:1px solid var(--border);
+  }
+  .decision-strip .ds-label span{
+    font-weight:400;color:var(--text-mute);display:block;font-size:9px;letter-spacing:1.3px;margin-top:3px;
+  }
+  .decision-strip .ds-step{
+    display:flex;align-items:center;gap:9px;flex:1;
+    font-size:11px;color:var(--text);line-height:1.3;
+  }
+  .decision-strip .ds-step b{color:var(--text);font-weight:700;}
+  .decision-strip .ds-step .num{
+    background:var(--pink);color:#FFFFFF;
+    width:22px;height:22px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;min-width:22px;
+  }
+  .decision-strip .ds-step .sub{display:block;color:var(--text-mute);font-size:10px;margin-top:2px;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 ══════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="logo-block">
+      <img class="logo" src="{{ bpo.logo_path }}" alt="{{ bpo.name }}">
+      <div class="powered">
+        <div class="pw-label">Powered by</div>
+        <div class="pw-name">{{ ai_partner.name }}</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="hr-title">Prepared for {{ end_client.name }}</div>
+      <div class="hr-sub">{{ engagement_label }} — ROI Brief</div>
+    </div>
+  </div>
+
+  <div class="title-row">
+    <h1>{{ page1.title }}<span class="tagline">{{ page1.subtitle }}</span></h1>
+    <div class="badge-right">
+      <div class="br-label">YEAR 1 COST<br>SAVINGS</div>
+      <div class="br-value">{{ year1_savings_display }}</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="two-col">
+      <div>
+        <div class="section-label">① CURRENT STATE · {{ total_volume_display }} ANNUAL CONTACTS</div>
+        <div class="card">
+          <h3>Estimated {{ end_client.name }} CX Spend</h3>
+          <p class="sub">{{ ai_vendor_name }} AI platform + ~{{ fte_count_display }} {{ bpo.label }} agents{% if cx_pct_display %} · {{ cx_pct_display }} of revenue (in-band with 2–5% subscription retail benchmark){% endif %}</p>
+
+          <div class="kpi-grid">
+            <div class="kpi-tile">
+              <div class="val">{{ containment_display }}{% if containment_footnote %}<sup class="footref">¹</sup>{% endif %}</div>
+              <div class="lbl">AI CONTAINMENT{% if containment_footnote %} ({{ end_client.short_name | upper }}-REPORTED){% endif %}</div>
+            </div>
+            <div class="kpi-tile">
+              <div class="val sm">~{{ fte_count_display }}</div>
+              <div class="lbl">{{ bpo.label | upper }} AGENTS @ ~${{ fte_rate }}/HR</div>
+            </div>
+          </div>
+
+          <div class="costs">
+            <div class="cost-line">
+              <span class="lbl">{{ ai_vendor_name }} AI Platform ({{ channels_display }}){% if ai_spend_is_estimated %}<sup class="footref">*</sup>{% endif %}</span>
+              <span class="val">~{{ ai_spend_display }}</span>
+            </div>
+            <div class="cost-line">
+              <span class="lbl">{{ bpo.label }} Agent Delivery (~{{ fte_count_display }} FTE × 2,080 hrs)</span>
+              <span class="val">~{{ bpo_spend_display }}</span>
+            </div>
+            <div class="cost-line total">
+              <span>Total Annual CX Spend</span>
+              <span class="val">~{{ total_cx_display }}</span>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div class="lbl">CURRENT BLENDED COST PER OUTCOME</div>
+            <div class="val">{{ blended_cost_display }}</div>
+            <div class="note">Two vendors, two contracts, two invoices — and still leaving {{ human_share_display }} of contacts on live agents.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">② {{ bpo.name | upper }} OUTCOMES-BASED MODEL · AI + HUMAN BLENDED</div>
+        <div class="card card-hl">
+          <div class="reco-pill">RECOMMENDED</div>
+          <h3>Phased Pricing — Tied to AI Containment Milestones</h3>
+          <p class="sub">Single per-resolved-outcome price covers AI resolution <b>and</b> {{ bpo.name }} human escalation. {{ end_client.short_name }} pays only when a query is resolved.</p>
+
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th></th>
+                {% for ph in phases %}
+                <th>{{ ph.name }}<span class="sub">Month {{ ph.months }}</span></th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>AI Containment</td>{% for ph in phases %}<td>{{ ph.containment_display }}</td>{% endfor %}</tr>
+              <tr>
+                <td>Price per Outcome<span class="sublbl">AI + Human blended</span></td>
+                {% for ph in phases %}<td class="big">{{ ph.price_display }}</td>{% endfor %}
+              </tr>
+              <tr>
+                <td>{{ bpo.name }} Human FTEs<span class="sublbl">Scales down as AI absorbs Tier 1</span></td>
+                {% for ftec in phase_fte_counts %}<td>~{{ ftec }}</td>{% endfor %}
+              </tr>
+              <tr>
+                <td>Annual Cost to {{ end_client.name }}</td>
+                {% for ph in phases %}<td>{{ ph.annualized_cost_display }} ann.</td>{% endfor %}
+              </tr>
+              <tr class="savings">
+                <td>Savings vs. {{ total_cx_display }}</td>
+                {% for ph in phases %}<td>{{ ph.savings_pct_display }}</td>{% endfor %}
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="incl">
+            <div class="incl-title">WHAT'S INCLUDED IN THE PER-OUTCOME PRICE</div>
+            <div class="incl-grid">
+              <span><span class="chk">✓</span> <b>Agentic AI</b> — voice, chat, WhatsApp</span>
+              <span><span class="chk">✓</span> <b>{{ bpo.name }} human agents</b> — tenured tier</span>
+              <span><span class="chk">✓</span> <b>24/7 coverage</b> — 60+ languages</span>
+              <span><span class="chk">✓</span> <b>Surge elasticity</b> — peak / launches</span>
+              <span><span class="chk">✓</span> <b>Platform infrastructure</b> — no lift</span>
+              <span><span class="chk">✓</span> <b>Ongoing optimization</b> — weekly tuning</span>
+            </div>
+          </div>
+
+          <div class="floor-note">
+            Containment-linked pricing is floor-protected: if a milestone is not jointly verified, pricing stays at the prior tier — it never steps up. Ramp-risk sits with {{ bpo.name }}, not {{ end_client.name }}.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="msg-row">
+      <div class="msg"><div class="bubble">A</div><div>
+        <div class="title">Savings from Day 1</div>
+        <div class="body-text">Phase 1 price of <b>{{ phase1_price_display }}</b> is <b>{{ day1_savings_pct }} below</b> the {{ blended_cost_display }} blended cost today. No ramp period where you pay more.</div>
+      </div></div>
+      <div class="msg"><div class="bubble">B</div><div>
+        <div class="title">It Only Gets Better</div>
+        <div class="body-text">Price <b>steps down</b> as AI containment ramps {{ phase1_containment }} → {{ phase3_containment }}. You're not locked into the starting rate.</div>
+      </div></div>
+      <div class="msg"><div class="bubble">C</div><div>
+        <div class="title">Zero Ramp Risk</div>
+        <div class="body-text">You pay <b>per resolved outcome</b>. If we don't resolve it, you don't pay. {{ bpo.name }} absorbs ramp risk.</div>
+      </div></div>
+      <div class="msg"><div class="bubble">D</div><div>
+        <div class="title">One Vendor, One Price</div>
+        <div class="body-text">Replaces {{ ai_vendor_name }} + incumbent {{ bpo.label }}. <b>One SLA, one invoice, one accountable partner.</b></div>
+      </div></div>
+    </div>
+
+    <div class="value-strip">
+      <div class="vs-col">
+        <div class="vs-label">TOTAL ANNUAL VALUE</div>
+        <div class="vs-head"><span class="accent">{{ total_value_display }}</span> Year 1 potential <span class="light">· stackable across {% if revenue_gen_display %}three{% else %}two{% endif %} layers</span></div>
+      </div>
+      <div class="vs-divider"></div>
+      <div class="stats-grid">
+        <div class="vs-stat">
+          <div class="v">{{ year1_savings_display }}</div>
+          <div class="l">Direct cost savings<br>Contractual · Year 1</div>
+        </div>
+        {% if retained_revenue_display %}
+        <div class="vs-stat">
+          <div class="v">+{{ retained_revenue_display }}</div>
+          <div class="l">Retained revenue<br>{{ retention_lift_label }} CX lift</div>
+        </div>
+        {% endif %}
+        {% if revenue_gen_display %}
+        <div class="vs-stat">
+          <div class="v">+{{ revenue_gen_display }}<sup class="footref" style="color:rgba(255,255,255,0.7);">²</sup></div>
+          <div class="l">Revenue generation<br>Phase 2+ opportunity</div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-zone">
+    <div class="footnotes">
+      {% if containment_footnote %}<sup>¹</sup> {{ containment_footnote }}&nbsp;&nbsp;{% endif %}
+      {% if ai_spend_is_estimated %}<sup>*</sup> {{ ai_vendor_name }} spend is a back-of-envelope estimate derived from publicly-available per-conversation pricing applied to {{ end_client.short_name }}-reported contact volumes ({{ volume_breakdown_text }}) plus platform base and LLM tokens. Directional; not a quoted figure — to be validated in discovery.&nbsp;&nbsp;{% endif %}
+      {% if revenue_gen_footnote %}<sup>²</sup> {{ revenue_gen_footnote }}{% endif %}
+    </div>
+    <div class="footer">
+      <span>{{ bpo.name }} × {{ ai_partner.name }} · {{ end_client.name }} {{ engagement_label }} · ROI Brief — Page 1 of 3</span>
+      <span class="conf">CONFIDENTIAL</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 ══════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="logo-block">
+      <img class="logo" src="{{ bpo.logo_path }}" alt="{{ bpo.name }}">
+      <div class="powered">
+        <div class="pw-label">Powered by</div>
+        <div class="pw-name">{{ ai_partner.name }}</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="hr-title">What counts as a resolved outcome</div>
+      <div class="hr-sub">Definitions · {{ end_client.short_name }}-Specific Priorities{% if target_kpis %} · KPI Alignment{% endif %}</div>
+    </div>
+  </div>
+
+  <div class="body" style="padding-top:12px;">
+
+    <div class="stake-hero">
+      <div class="label">STAKE IN THE GROUND</div>
+      <h2>
+        A <span class="hl">successful outcome</span> is a customer query <span class="hl">resolved</span> with <span class="hl">no repeat contact on the same topic within 48 hours.</span>
+        You pay only when that standard is met — AI or human.
+      </h2>
+      <div class="fineprint">Definitions subject to mutual validation during the discovery workshop with {{ end_client.short_name }} ops, QA, and CX leadership.</div>
+    </div>
+
+    <div class="two-col" style="flex:1;min-height:0;">
+
+      <div>
+        <div class="defs-head">OUTCOME DEFINITIONS BY USE CASE *</div>
+        {% for uc in use_cases %}
+        <div class="def-row">
+          <div class="def-name">{{ uc.name }}</div>
+          <div>
+            <div class="def-body">{{ uc.definition | safe }}</div>
+            {% if uc.attribution %}<div class="attr"><span class="lbl">ATTRIBUTION</span>{{ uc.attribution }}</div>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div>
+        <div class="defs-head">DESIGNED AROUND {{ end_client.short_name | upper | possessive }} STATED PRIORITIES</div>
+
+        <div class="priorities-list">
+          {% for pr in priorities %}
+          <div class="pr">
+            <div class="name">{{ pr.name }}</div>
+            <div class="body-text">{{ pr.description | safe }}</div>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if target_kpis %}
+        <div class="kpi-align">
+          <div class="title">ALIGNED WITH {{ end_client.short_name | upper | possessive }} TARGET KPIs{% if target_kpis_footnote %}<sup class="footref">⁴</sup>{% endif %}</div>
+          <div class="items">
+            {% for kpi in target_kpis %}<span>{{ kpi }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="path-forward">
+      <div class="pf-label">PATH<br>FORWARD<span>BROAD ENGAGEMENT</span></div>
+      {% for step in path_forward %}
+      <div class="pf-step"><span class="num">{{ loop.index }}</span>{{ step }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="footer-zone">
+    <div class="footnotes">
+      * Placeholder definitions and attribution metrics derived from {{ end_client.short_name }}'s stated tool stack{% if tech_stack %} ({{ tech_stack | join(", ") }}){% endif %} plus {{ bpo.name }} Intelligence Labs benchmarks — subject to refinement post-discovery.
+      {% if voc_tool_footnote %}&nbsp;<sup>³</sup> {{ voc_tool_footnote }}{% endif %}
+      {% if target_kpis_footnote %}&nbsp;<sup>⁴</sup> {{ target_kpis_footnote }}{% endif %}
+    </div>
+    <div class="footer">
+      <span>{{ bpo.name }} × {{ ai_partner.name }} · {{ end_client.name }} {{ engagement_label }} · ROI Brief — Page 2 of 3</span>
+      <span class="conf">CONFIDENTIAL</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 3 ══════════════ -->
+<div class="page">
+  <div class="header">
+    <div class="logo-block">
+      <img class="logo" src="{{ bpo.logo_path }}" alt="{{ bpo.name }}">
+      <div class="powered">
+        <div class="pw-label">Powered by</div>
+        <div class="pw-name">{{ ai_partner.name }}</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="hr-title">Low-Hanging Fruit — Where to Start</div>
+      <div class="hr-sub">The Lighthouse Pilot · {{ pilot.timeline }}</div>
+    </div>
+  </div>
+
+  <div class="title-row">
+    <h1>Low-Hanging Fruit to Get Going<span class="tagline">The one use case that proves everything</span></h1>
+    <div class="badge-right">
+      <div class="br-label">CONSERVATIVE VALUE<br>FROM ONE USE CASE</div>
+      <div class="br-value">{{ pilot_total_value_display }}</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="lighthouse-hero">
+      <div class="lh-top">
+        <div>
+          <div class="label">LIGHTHOUSE PILOT · START HERE</div>
+          <h2>{{ pilot.name }}</h2>
+          <div class="lh-desc">{{ pilot.description | safe }}</div>
+        </div>
+        <div class="lh-stats">
+          <div class="stat"><div class="v">{{ lh_volume_share_display }}</div><div class="l">Of All Contacts</div></div>
+          <div class="stat"><div class="v">{{ lh_volume_display }}</div><div class="l">Annually</div></div>
+          <div class="stat"><div class="v">{{ pilot.timeline_short }}</div><div class="l">To Live</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="four-col">
+      <div class="pilot-card">
+        <div class="num-head"><span class="num">1</span><span class="t">WHY THIS FIRST</span></div>
+        <ul>{% for item in pilot.why_first %}<li>{{ item | safe }}</li>{% endfor %}</ul>
+      </div>
+
+      <div class="pilot-card">
+        <div class="num-head"><span class="num">2</span><span class="t">WHAT WE STAND UP</span></div>
+        <ul>{% for item in pilot.what_we_stand_up %}<li>{{ item | safe }}</li>{% endfor %}</ul>
+      </div>
+
+      <div class="pilot-card">
+        <div class="num-head"><span class="num">3</span><span class="t">WHAT {{ end_client.short_name | upper }} DOES</span></div>
+        <ul>{% for item in pilot.what_client_does %}<li>{{ item | safe }}</li>{% endfor %}</ul>
+      </div>
+
+      <div class="pilot-card">
+        <div class="num-head"><span class="num">4</span><span class="t">THE COMMERCIAL OFFER</span></div>
+        <ul>{% for item in pilot.commercial_offer %}<li>{{ item | safe }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+
+    <div class="value-summary">
+      <div class="vs-lbl">WHAT IT'S<br>WORTH<span>FROM ONE USE CASE</span></div>
+      <div class="vs-cell">
+        <div class="v">{{ lh_savings_low_display }} – {{ lh_savings_high_display }}</div>
+        <div class="l">Annual cost savings<br>at {{ lh_target_containment_display }} containment</div>
+      </div>
+      {% if lh_retained_revenue_display %}
+      <div class="divider"></div>
+      <div class="vs-cell">
+        <div class="v">+{{ lh_retained_revenue_display }}</div>
+        <div class="l">Preserved revenue<br>0.5% retention lift</div>
+      </div>
+      {% endif %}
+      <div class="divider"></div>
+      <div class="vs-cell">
+        <div class="v">{{ pilot_total_value_display }}</div>
+        <div class="l">Conservative total<br>annual value</div>
+      </div>
+      <div class="p2">
+        <div class="t">PHASE 2 UNLOCKS</div>
+        <div class="body-text">{{ pilot.phase2_unlocks }}</div>
+      </div>
+    </div>
+
+    <div class="decision-strip">
+      <div class="ds-label">DECISION<br>WE NEED<span>THIS WEEK</span></div>
+      {% for step in decision_steps %}
+      <div class="ds-step"><span class="num">{{ loop.index }}</span><div><b>{{ step.title }}</b><span class="sub">{{ step.detail }}</span></div></div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="footer-zone">
+    <div class="footer">
+      <span>{{ bpo.name }} × {{ ai_partner.name }} · {{ end_client.name }} {{ engagement_label }} · ROI Brief — Page 3 of 3 · Directional estimates subject to discovery validation</span>
+      <span class="conf">CONFIDENTIAL</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
