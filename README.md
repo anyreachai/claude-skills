@@ -79,7 +79,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Slash Commands (4 commands)
+## Slash Commands (5 commands)
 
 | Command | Description |
 |---|---|
@@ -87,6 +87,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | `/burn-check` | Quick burn rate and runway check — cash, revenue, costs, net burn, runway, zero cash date |
 | `/pipeline-update` | Update deal pipeline and recalculate all 4 scenarios with probability-weighted forecasts |
 | `/blog-audit` | Deep audit of all 130 BPO Insights blog posts — source format, manifest, outputs, cross-reference |
+| `/sync-skills` | Sync skills from `Desktop/Skills/` to this repo — extracts `.skill` ZIPs, maps `.txt` references, updates docs, commits & pushes |
 
 ---
 
@@ -142,5 +143,6 @@ claude-skills/
     ├── blog-audit.md                      # /blog-audit
     ├── burn-check.md                      # /burn-check
     ├── financial-report.md                # /financial-report
-    └── pipeline-update.md                 # /pipeline-update
+    ├── pipeline-update.md                 # /pipeline-update
+    └── sync-skills.md                     # /sync-skills
 ```

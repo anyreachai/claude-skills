@@ -65,6 +65,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | `/burn-check` | Quick burn rate and runway check |
 | `/pipeline-update` | Update deal pipeline and recalculate scenarios |
 | `/blog-audit` | Deep audit of all 130 BPO Insights blog posts |
+| `/sync-skills` | Sync skills from Desktop/Skills to this repo — extract .skill ZIPs, update docs, commit & push |
 
 ## How to Use a Skill
 
