@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (19 skills)
+## Skills Catalog (28 skills)
 
 ### Research & Intelligence
 
@@ -45,6 +45,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[proposal-sow-generator](skills/proposal-sow-generator/)** | "generate a proposal for [company]", "create the SoW", "scope this out" | Branded PDF proposal + integration flowchart |
 | **[calls](skills/calls/)** | "analyze this call", "score this meeting", "call debrief" | Branded PDF — sentiment, engagement, seller performance, psychoanalysis, inflection analysis |
 | **[meeting-recap-email](skills/meeting-recap-email/)** | "recap that meeting", "send a follow-up", "email the recap" | Drafted email to attendees via Gmail/message_compose |
+| **[discovery-dashboard](skills/discovery-dashboard/)** | "turn this discovery into a dashboard", "deal-on-a-page", "project map from the transcript" | Single-file JSX dashboard — overview, stakeholders, pain/value, scope, decision path, risks |
 
 ### Legal & Contracts
 
@@ -62,6 +63,9 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[cx-intel-report-xlsx](skills/cx-intel-report-xlsx/)** | "generate the XLSX", "create the data export" | 5-sheet Excel workbook — reviews, themes, benchmarking, competitor deep dives |
 | **[leverage-analysis](skills/leverage-analysis/)** | "who has leverage?", "quantify power dynamics", "score the relationship" | Interactive React dashboard — leverage scoring, financial exposure, game theory |
 | **[maturity-assessment](skills/maturity-assessment/)** | "how mature are our ops?", "enterprise readiness", "benchmark our SOPs" | Interactive React dashboard — maturity by domain vs funding stage norms |
+| **[consumer-intel-report](skills/consumer-intel-report/)** | "consumer intelligence report", "CX deep dive for [company]", "12-section review report" | White-labeled 12-section PDF — dark-navy + accent-blue editorial design |
+| **[consumer-intelligence-xlsx](skills/consumer-intelligence-xlsx/)** | "consumer intelligence xlsx", "review intelligence workbook", "companion xlsx" | 5-sheet workbook — review summary, third-party, employee, benchmarking, competitor deep dives |
+| **[ai-fluency-assessment](skills/ai-fluency-assessment/)** | "AI fluency self-assessment", "grade my AI usage", "where do I stand on AI" | Single JSX artifact — 5×4 matrix scorecard, radar chart, evidence + next moves |
 
 ### Content & Presentations
 
@@ -70,6 +74,21 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[richard-thought-leadership](skills/richard-thought-leadership/)** | "help me write about [topic]", "draft a LinkedIn post", "thought leadership" | Long-form articles, LinkedIn posts, memos in Richard's voice |
 | **[narrative-deck](skills/narrative-deck/)** | "build a pitch deck", "narrative deck", "investor deck" | Storyboard-first deck in 3 modes: Outrage (BPOs), Empathy (enterprise), Paradigm (investors) |
 | **[shadcn-deck](skills/shadcn-deck/)** | "create a deck for [client]", "branded presentation", "clean slides" | Polished .pptx with shadcn/Tailwind design system + client brand theming |
+| **[anyreach-deck-pptx](skills/anyreach-deck-pptx/)** | "build a pptx deck", "editable PowerPoint", "editorial pptx" | Native editable PowerPoint via python-pptx — Fraunces serif, cream + ink alternation, indigo + lime accents |
+
+### GTM Stack Audit (BPO Partner Onboarding)
+
+| Skill | Trigger Phrases | Output |
+|---|---|---|
+| **[gtm-stack-audit](skills/gtm-stack-audit/)** | "audit their GTM stack", "BPO onboarding audit", "RevOps audit" | Strategy memo + tactics backlog + `findings.json` across CRM, MA, SEP, CI, dialers |
+| **[gtm-audit-pdf](skills/gtm-audit-pdf/)** | "generate the audit PDF", "board memo for the GTM audit", "make a PDF version of the audit" | 8-page landscape editorial PDF brief from GTM audit JSON output |
+| **[gtm-audit-app](skills/gtm-audit-app/)** | "JSX prototype for the audit", "show what this would look like as a product" | Single-file React (.jsx) prototype — tab nav, expandable findings, ranked tactics |
+
+### Development & Video
+
+| Skill | Trigger Phrases | Output |
+|---|---|---|
+| **[remotion](skills/remotion/)** | "build a Remotion video", "video composition in React" | Remotion best-practices guidance — composition, animation, rendering |
 
 ### DevOps
 
@@ -121,21 +140,30 @@ claude-skills/
 ├── README.md                              # This file
 ├── skills/
 │   ├── account-brief-generator/           # Meeting prep briefs
+│   ├── ai-fluency-assessment/             # 5×4 AI fluency scorecard
+│   ├── anyreach-deck-pptx/                # Editorial native PPTX decks
 │   ├── anyreach-funnel-analysis/          # Mixpanel funnel analysis
 │   ├── brand-style-extractor/             # Website → brand guide
 │   ├── calls/                             # Sales call analysis (3 modes)
 │   ├── company-deep-research/             # Company GTM research
 │   ├── competitor-deep-dive/              # Competitor battle cards
-│   ├── demo-bot-usage-report/              # Bot usage report from CSV
-│   ├── cx-intel-report-pdf/               # Consumer intel PDF
-│   ├── cx-intel-report-xlsx/              # Consumer intel XLSX
+│   ├── consumer-intel-report/             # 12-section CX intel PDF (white-labeled)
+│   ├── consumer-intelligence-xlsx/        # 5-sheet CX intel workbook
+│   ├── cx-intel-report-pdf/               # Consumer intel PDF (original)
+│   ├── cx-intel-report-xlsx/              # Consumer intel XLSX (original)
+│   ├── demo-bot-usage-report/             # Bot usage report from CSV
 │   ├── deploy-intel/                      # Cloud Run deployment
+│   ├── discovery-dashboard/               # JSX project dashboard from discovery
+│   ├── gtm-audit-app/                     # GTM audit → JSX prototype
+│   ├── gtm-audit-pdf/                     # GTM audit → editorial PDF brief
+│   ├── gtm-stack-audit/                   # Cross-tool BPO GTM audit
 │   ├── legal-review/                      # Contract analysis
 │   ├── leverage-analysis/                 # Negotiation leverage
 │   ├── maturity-assessment/               # Ops maturity scoring
 │   ├── meeting-recap-email/               # Meeting follow-up emails
 │   ├── narrative-deck/                    # Pitch deck storyboarding
 │   ├── proposal-sow-generator/            # Proposal & SoW PDFs
+│   ├── remotion/                          # Remotion (React video) guidance
 │   ├── richard-thought-leadership/        # Thought leadership content
 │   ├── shadcn-deck/                       # Branded presentations
 │   └── stakeholder-intel/                 # Person research PDFs

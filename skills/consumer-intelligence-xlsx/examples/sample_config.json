@@ -1,0 +1,235 @@
+{
+  "company_name": "Acme Travel Group",
+  "prepared_by": "Anyreach, Inc.",
+  "report_date": "Nov 12, 2025",
+  "focus_area": "Foreign Language Support",
+  "focus_area_description": "Analysis of multilingual customer support across independent review platforms",
+
+  "platforms": [
+    {
+      "name": "Trustpilot",
+      "avg_rating": 3.1,
+      "review_count": 247,
+      "notes": "Based on 247 of 1,432 total reviews on Trustpilot, focus-area complaints concentrate in billing disputes and language-barrier escalations."
+    },
+    {
+      "name": "Google Reviews",
+      "avg_rating": 3.4,
+      "review_count": 189,
+      "notes": "Based on 189 reviews from Google Reviews, customer experience is mixed with concentrated frustration around international call routing."
+    },
+    {
+      "name": "BBB",
+      "avg_rating": 1.8,
+      "review_count": 64,
+      "notes": "BBB complaints (n=64) skew heavily negative, primarily refund disputes and unresolved escalations involving non-English-speaking customers."
+    },
+    {
+      "name": "TripAdvisor",
+      "avg_rating": 3.0,
+      "review_count": 112,
+      "notes": "Mixed sentiment on TripAdvisor (n=112). Positive reviews praise destination quality; negatives target post-booking support."
+    }
+  ],
+
+  "themes": [
+    { "name": "Long hold times on international lines", "sentiment": "Negative", "frequency_pct": 42, "confidence": "HIGH (n=104)" },
+    { "name": "Language barrier with agents",             "sentiment": "Negative", "frequency_pct": 38, "confidence": "HIGH (n=94)" },
+    { "name": "Billing disputes and refund delays",       "sentiment": "Negative", "frequency_pct": 31, "confidence": "HIGH (n=77)" },
+    { "name": "Outsourced call center frustration",       "sentiment": "Negative", "frequency_pct": 27, "confidence": "MEDIUM (n=67)" },
+    { "name": "Unresolved escalations",                   "sentiment": "Negative", "frequency_pct": 22, "confidence": "MEDIUM (n=54)" },
+    { "name": "Helpful tour guides and on-trip staff",    "sentiment": "Positive", "frequency_pct": 34, "confidence": "HIGH (n=84)" },
+    { "name": "Trip itinerary quality",                   "sentiment": "Positive", "frequency_pct": 28, "confidence": "MEDIUM (n=69)" },
+    { "name": "Mixed signals on policy clarity",          "sentiment": "Mixed",    "frequency_pct": 18, "confidence": "MEDIUM (n=44)" }
+  ],
+
+  "sentiment_timeline": [
+    { "period": "Q3 2023", "total": 38, "positive": 14, "negative": 18 },
+    { "period": "Q4 2023", "total": 47, "positive": 16, "negative": 24 },
+    { "period": "Q1 2024", "total": 62, "positive": 19, "negative": 35 },
+    { "period": "Q2 2024", "total": 78, "positive": 22, "negative": 48 },
+    { "period": "Q3 2024", "total": 91, "positive": 26, "negative": 56 },
+    { "period": "Q4 2024", "total": 84, "positive": 28, "negative": 48 },
+    { "period": "Q1 2025", "total": 96, "positive": 31, "negative": 55 }
+  ],
+
+  "competitor_comparison_in_summary": {
+    "headers": ["Metric", "Acme Travel Group", "Competitor A", "Competitor B"],
+    "rows": [
+      ["Avg rating across independent platforms", "3.1", "2.4", "3.6"],
+      ["% negative reviews citing language barrier", "38%", "22%", "12%"],
+      ["% reviews mentioning hold times", "42%", "31%", "18%"],
+      ["Resolution rate on BBB complaints", "44%", "31%", "62%"],
+      ["Quarter-over-quarter negative sentiment trend", "+12pp", "+4pp", "-2pp"]
+    ]
+  },
+
+  "third_party_reviews": [
+    {
+      "platform": "Trustpilot",
+      "reviewer": "Jane D.",
+      "rating": "1 Star",
+      "sentiment": "Negative",
+      "text": "Spent two hours on hold trying to change my booking. When I finally got through the agent could barely understand me and kept transferring me. Never got a resolution.",
+      "date": "Feb 2025",
+      "source_url": "https://www.trustpilot.com/reviews/example1"
+    },
+    {
+      "platform": "Trustpilot",
+      "reviewer": "Marcus B.",
+      "rating": "5 Stars",
+      "sentiment": "Positive",
+      "text": "Our trip to Portugal was incredible. The local guide was fantastic and the itinerary was thoughtfully designed. We will book again.",
+      "date": "Jan 2025",
+      "source_url": "https://www.trustpilot.com/reviews/example2"
+    },
+    {
+      "platform": "Trustpilot",
+      "reviewer": "Sophie L.",
+      "rating": "2 Stars",
+      "sentiment": "Negative",
+      "text": "Tried calling support in French — agent did not speak the language and we were left without help during our trip. Booking itself was OK.",
+      "date": "Dec 2024",
+      "source_url": "https://www.trustpilot.com/reviews/example3"
+    },
+    {
+      "platform": "Google Reviews",
+      "reviewer": "Carlos M.",
+      "rating": "1 Star",
+      "sentiment": "Negative",
+      "text": "Billing was charged twice. Spent weeks chasing a refund. Customer service was a black hole.",
+      "date": "Mar 2025",
+      "source_url": "https://www.google.com/maps/reviews/example1"
+    },
+    {
+      "platform": "Google Reviews",
+      "reviewer": "Anita P.",
+      "rating": "4 Stars",
+      "sentiment": "Mixed",
+      "text": "The trip itself was great, but post-trip support was hard to reach. Wish they had better follow-up channels.",
+      "date": "Feb 2025",
+      "source_url": "https://www.google.com/maps/reviews/example2"
+    },
+    {
+      "platform": "BBB",
+      "reviewer": "R. Kapoor",
+      "rating": "1 Star",
+      "sentiment": "Negative",
+      "text": "Filed a formal complaint after three months of being told my refund was processing. Still not resolved at the time of writing.",
+      "date": "Apr 2025",
+      "source_url": "https://www.bbb.org/example/complaints/1"
+    }
+  ],
+
+  "employee_reviews": [
+    {
+      "platform": "Glassdoor",
+      "reviewer": "Anonymous (Customer Service Agent)",
+      "sentiment": "Negative",
+      "rating": "2/5",
+      "text": "Call volume is unmanageable. We are not given proper tools for international callers and the language barriers create stress on both sides.",
+      "date": "Jan 2025",
+      "source_url": "https://www.glassdoor.com/Reviews/example1"
+    },
+    {
+      "platform": "Glassdoor",
+      "reviewer": "Anonymous (Team Lead)",
+      "sentiment": "Mixed",
+      "rating": "3/5",
+      "text": "Leadership is well-intentioned but tooling for the call center has not kept up with the international expansion of the customer base.",
+      "date": "Dec 2024",
+      "source_url": "https://www.glassdoor.com/Reviews/example2"
+    },
+    {
+      "platform": "Indeed",
+      "reviewer": "Anonymous (Former Agent)",
+      "sentiment": "Negative",
+      "rating": "2/5",
+      "text": "Routing system regularly sends Spanish-language calls to English-only agents. We end up apologizing for the company constantly.",
+      "date": "Feb 2025",
+      "source_url": "https://www.indeed.com/cmp/example/reviews/1"
+    }
+  ],
+
+  "competitors": ["Competitor A", "Competitor B", "Competitor C"],
+
+  "competitive_benchmarking": [
+    {
+      "title": "A — Platform-by-Platform Ratings Comparison",
+      "headers": ["Platform", "Acme Travel Group", "Competitor A", "Competitor B", "Competitor C", "Notes"],
+      "rows": [
+        ["Trustpilot",      "3.1", "2.4", "3.6", "1.9", "Acme leads on volume, lags on recent sentiment"],
+        ["Google Reviews",  "3.4", "2.8", "3.7", "2.2", "Competitor B has cleanest recent trendline"],
+        ["BBB",             "1.8", "1.6", "2.4", "1.4", "All players struggle here; Competitor B best at resolution"],
+        ["TripAdvisor",     "3.0", "2.6", "3.5", "2.1", "Itinerary quality drives positives across board"],
+        ["ConsumerAffairs", "2.4", "1.9", "3.0", "1.7", "Refund disputes dominate complaints across all"]
+      ]
+    },
+    {
+      "title": "B — Theme Overlap with Competitors",
+      "headers": ["Theme", "Acme Travel Group", "Competitor A", "Competitor B", "Competitor C", "Notes"],
+      "rows": [
+        ["Long hold times",          "42%", "31%", "18%", "47%", "Acme and Comp C are outliers"],
+        ["Language barrier",         "38%", "22%", "12%", "29%", "Acme highest — focus-area pain confirmed"],
+        ["Billing disputes",         "31%", "28%", "14%", "33%", "Comp B materially better on this"],
+        ["Outsourced call center",   "27%", "19%", "8%",  "24%", "Comp B internalized support — visible in data"],
+        ["Unresolved escalations",   "22%", "21%", "9%",  "26%", ""]
+      ]
+    }
+  ],
+
+  "competitor_deep_dives": [
+    {
+      "competitor": "Competitor A",
+      "summary_line": "Blended Independent: ~2.4/5 | NPS: 18 | Neg Sentiment: ~62%",
+      "quotes": [
+        {
+          "reviewer": "Diane M.",
+          "platform": "Trustpilot",
+          "rating": "1 Star",
+          "theme": "Billing dispute",
+          "excerpt": "Charged for an upgrade I never requested. Took 6 weeks and a chargeback to recover.",
+          "date": "Feb 2025"
+        },
+        {
+          "reviewer": "Felix R.",
+          "platform": "Google Reviews",
+          "rating": "2 Stars",
+          "theme": "Call center outsourcing",
+          "excerpt": "Clearly outsourced support. Agent had no authority to actually do anything.",
+          "date": "Jan 2025"
+        },
+        {
+          "reviewer": "Tomás S.",
+          "platform": "BBB",
+          "rating": "1 Star",
+          "theme": "Refund delay",
+          "excerpt": "Promised refund within 7 days. 90 days later still waiting and no one returns calls.",
+          "date": "Mar 2025"
+        }
+      ]
+    },
+    {
+      "competitor": "Competitor B",
+      "summary_line": "Blended Independent: ~3.6/5 | NPS: 47 | Neg Sentiment: ~28%",
+      "quotes": [
+        {
+          "reviewer": "Lina K.",
+          "platform": "Trustpilot",
+          "rating": "4 Stars",
+          "theme": "Resolution speed",
+          "excerpt": "Issue with my booking was resolved in one call. Refreshing.",
+          "date": "Feb 2025"
+        },
+        {
+          "reviewer": "P. O'Sullivan",
+          "platform": "Google Reviews",
+          "rating": "3 Stars",
+          "theme": "Pricing transparency",
+          "excerpt": "Service is good but the pricing model is confusing — too many add-ons revealed at checkout.",
+          "date": "Jan 2025"
+        }
+      ]
+    }
+  ]
+}

@@ -25,6 +25,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Before & After inflection point analysis of a strategic move | `skills/calls/` (mode 2: inflection) |
 | Psychoanalyze stakeholders from a call transcript | `skills/calls/` (mode 3: psychoanalysis) |
 | Send a meeting recap email to attendees | `skills/meeting-recap-email/` |
+| Turn a discovery call/notes into an interactive JSX project dashboard | `skills/discovery-dashboard/` |
 
 ### Legal & Contracts
 
@@ -42,6 +43,9 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Generate the companion XLSX data export for a CX Intel report | `skills/cx-intel-report-xlsx/` |
 | Quantify leverage/power dynamics in a negotiation | `skills/leverage-analysis/` |
 | Assess Anyreach's operational maturity / enterprise readiness | `skills/maturity-assessment/` |
+| Generate a 12-section Consumer Intelligence PDF from review data (white-labeled) | `skills/consumer-intel-report/` |
+| Generate the 5-sheet Consumer Intelligence XLSX workbook companion | `skills/consumer-intelligence-xlsx/` |
+| Score Richard's AI fluency across 5 roles × 4 levels (JSX scorecard) | `skills/ai-fluency-assessment/` |
 
 ### Content & Presentations
 
@@ -50,6 +54,21 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Write thought leadership content in Richard's voice | `skills/richard-thought-leadership/` |
 | Build a narrative pitch deck (storyboard-first framework) | `skills/narrative-deck/` |
 | Create a polished shadcn-style branded presentation | `skills/shadcn-deck/` |
+| Build an editorial native PowerPoint (.pptx) using Anyreach design system | `skills/anyreach-deck-pptx/` |
+
+### GTM Stack Audit (BPO Partner Onboarding)
+
+| If the user wants to... | Use this skill |
+|---|---|
+| Run a cross-tool GTM stack audit on a BPO partner (CRM, MA, SEP, CI, dialers) | `skills/gtm-stack-audit/` |
+| Turn the audit JSON into an 8-page editorial PDF brief | `skills/gtm-audit-pdf/` |
+| Turn the audit JSON into a single-file React/JSX product prototype | `skills/gtm-audit-app/` |
+
+### Development & Video
+
+| If the user wants to... | Use this skill |
+|---|---|
+| Build a video in React using Remotion best practices | `skills/remotion/` |
 
 ### DevOps
 
