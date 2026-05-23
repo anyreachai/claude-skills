@@ -310,12 +310,13 @@ def hero_block(slide, eyebrow, headline_runs, subhead=None, byline=None,
     # Eyebrow
     label(slide, x, y, w, 26, eyebrow, on_cream=on_cream)
 
-    # Headline (massive serif). Headline box height tracks font size so
-    # we don't waste vertical space. h_size * 1.65 covers one full line
-    # + descender buffer for a 135pt headline.
+    # Headline (massive serif). Hero headlines at 135pt wrap to 2 lines
+    # in a 1240px-wide box (~15 chars/line). Reserve 2 lines always:
+    # h_size * 1.4 * 2 = 378px for 135pt, which handles two full lines
+    # (≈351px actual) with a 27px safety buffer.
     if isinstance(headline_runs, str):
         headline_runs = [headline_runs]
-    head_h = int(h_size * 1.65)
+    head_h = int(h_size * 1.4 * 2)
     rich_text(
         slide, x, y + 44, w, head_h,
         runs=headline_runs,
@@ -327,17 +328,17 @@ def hero_block(slide, eyebrow, headline_runs, subhead=None, byline=None,
 
     cursor_y = y + 44 + head_h
     if subhead:
-        # Subhead is body_lg=17pt at line_spacing 1.55, ~35px per line.
-        # 3 lines + a 14px gap to byline ≈ 130 advance.
+        # Subhead: body_lg=17pt at line_spacing 1.55, ~35px/line.
+        # 100px = ~2.8 lines. Keep subhead ≤2 lines to leave room for byline.
         rich_text(
-            slide, x, cursor_y, min(w, 720), 130,
+            slide, x, cursor_y, min(w, 720), 100,
             runs=[subhead] if isinstance(subhead, str) else subhead,
             font_size=TYPE['body_lg'],
             font_face=FONT_BODY,
             font_color='mutedOnCream' if on_cream else 'mutedOnInk',
             line_spacing=1.55,
         )
-        cursor_y += 130
+        cursor_y += 100
 
     if byline:
         rich_text(
@@ -388,9 +389,10 @@ def section_header(slide, label_text, headline_runs, body=None,
     cursor_y += head_h
 
     if body:
-        # Body box sized for 2 lines at body=13.5pt, line_spacing 1.65,
-        # ≈ 30 px per line. 70px = 2 lines + buffer.
-        body_h = 70
+        # Body box sized for 3 lines at body=13.5pt, line_spacing 1.65,
+        # ≈ 30 px per line. 100px = 3 lines + buffer. Keep body ≤3 lines
+        # (~200 chars at 820px) — a 4th line overflows into content below.
+        body_h = 100
         rich_text(
             slide, x, cursor_y + 4, min(w, 820), body_h,
             runs=[body] if isinstance(body, str) else body,
@@ -576,9 +578,9 @@ def detail_tile(eyebrow, eyebrow_aux, title, value, value_caption,
             )
             cursor += 24
 
-        # Row 5: italic ratio
+        # Row 5: italic ratio — 40px handles 2-line ratios at caption size
         rich_text(
-            slide, x, cursor, w, 28,
+            slide, x, cursor, w, 40,
             runs=[ratio],
             font_size=TYPE['caption'],
             font_face=FONT_BODY,
@@ -586,7 +588,7 @@ def detail_tile(eyebrow, eyebrow_aux, title, value, value_caption,
             italic_default=True,
             line_spacing=1.4,
         )
-        cursor += 28
+        cursor += 40
 
         # Hairline divider
         div_y = cursor + 10
