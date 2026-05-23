@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (28 skills)
+## Skills Catalog (29 skills)
 
 ### Research & Intelligence
 
@@ -66,6 +66,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[consumer-intel-report](skills/consumer-intel-report/)** | "consumer intelligence report", "CX deep dive for [company]", "12-section review report" | White-labeled 12-section PDF — dark-navy + accent-blue editorial design |
 | **[consumer-intelligence-xlsx](skills/consumer-intelligence-xlsx/)** | "consumer intelligence xlsx", "review intelligence workbook", "companion xlsx" | 5-sheet workbook — review summary, third-party, employee, benchmarking, competitor deep dives |
 | **[ai-fluency-assessment](skills/ai-fluency-assessment/)** | "AI fluency self-assessment", "grade my AI usage", "where do I stand on AI" | Single JSX artifact — 5×4 matrix scorecard, radar chart, evidence + next moves |
+| **[anyreach-financial-report](skills/anyreach-financial-report/)** | "update the financials", "regenerate the report", "what's our runway", "what's our burn" | Monthly financial health report — 4-5 page ReportLab PDF + JSX dashboard + Cowork config |
 
 ### Content & Presentations
 

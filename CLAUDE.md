@@ -46,6 +46,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Generate a 12-section Consumer Intelligence PDF from review data (white-labeled) | `skills/consumer-intel-report/` |
 | Generate the 5-sheet Consumer Intelligence XLSX workbook companion | `skills/consumer-intelligence-xlsx/` |
 | Score Richard's AI fluency across 5 roles × 4 levels (JSX scorecard) | `skills/ai-fluency-assessment/` |
+| Generate or update the monthly Anyreach financial health report (PDF + JSX dashboard + Cowork config) | `skills/anyreach-financial-report/` |
 
 ### Content & Presentations
 
