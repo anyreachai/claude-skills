@@ -57,6 +57,14 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Create a polished shadcn-style branded presentation | `skills/shadcn-deck/` |
 | Build an editorial native PowerPoint (.pptx) using Anyreach design system | `skills/anyreach-deck-pptx/` |
 
+### BPO Outcomes-Based ROI Pitch
+
+| If the user wants to... | Use this skill |
+|---|---|
+| Generate a 3-page ROI brief PDF for a BPO pitching outcomes-based AI + human pricing to their end-client | `skills/bpo-roi-brief/` |
+| Generate the 4-tab Excel workbook (formula-driven financial model) backing the ROI brief | `skills/bpo-roi-model/` |
+| Generate the internal-only Word briefing (talking points, margin profile, red lines) for the BPO's sales/ops team | `skills/bpo-roi-internal-briefing/` |
+
 ### GTM Stack Audit (BPO Partner Onboarding)
 
 | If the user wants to... | Use this skill |
