@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (29 skills)
+## Skills Catalog (32 skills)
 
 ### Research & Intelligence
 
@@ -76,6 +76,14 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[narrative-deck](skills/narrative-deck/)** | "build a pitch deck", "narrative deck", "investor deck" | Storyboard-first deck in 3 modes: Outrage (BPOs), Empathy (enterprise), Paradigm (investors) |
 | **[shadcn-deck](skills/shadcn-deck/)** | "create a deck for [client]", "branded presentation", "clean slides" | Polished .pptx with shadcn/Tailwind design system + client brand theming |
 | **[anyreach-deck-pptx](skills/anyreach-deck-pptx/)** | "build a pptx deck", "editable PowerPoint", "editorial pptx" | Native editable PowerPoint via python-pptx — Fraunces serif, cream + ink alternation, indigo + lime accents |
+
+### BPO Outcomes-Based ROI Pitch
+
+| Skill | Trigger Phrases | Output |
+|---|---|---|
+| **[bpo-roi-brief](skills/bpo-roi-brief/)** | "BPO ROI brief", "outcomes-based pricing brief", "AI replacement ROI", "partner pitch brief" | 3-page landscape PDF — current vs. future state, outcome definitions, lighthouse pilot proposal |
+| **[bpo-roi-model](skills/bpo-roi-model/)** | "ROI model", "savings model", "pricing model in Excel", "BPO ROI xlsx", "editable savings calculator" | 4-tab formula-driven Excel workbook — Executive Summary, Current State, Proposed Model, Assumptions |
+| **[bpo-roi-internal-briefing](skills/bpo-roi-internal-briefing/)** | "internal briefing", "sales team briefing", "talking points doc", "margin profile doc", "red lines doc" | Internal-only Word doc — talking points, margin profile, red lines, intel findings |
 
 ### GTM Stack Audit (BPO Partner Onboarding)
 
@@ -144,6 +152,9 @@ claude-skills/
 │   ├── ai-fluency-assessment/             # 5×4 AI fluency scorecard
 │   ├── anyreach-deck-pptx/                # Editorial native PPTX decks
 │   ├── anyreach-funnel-analysis/          # Mixpanel funnel analysis
+│   ├── bpo-roi-brief/                      # BPO ROI pitch PDF (3-page)
+│   ├── bpo-roi-internal-briefing/          # BPO ROI internal talking-points Word doc
+│   ├── bpo-roi-model/                      # BPO ROI 4-tab Excel financial model
 │   ├── brand-style-extractor/             # Website → brand guide
 │   ├── calls/                             # Sales call analysis (3 modes)
 │   ├── company-deep-research/             # Company GTM research
