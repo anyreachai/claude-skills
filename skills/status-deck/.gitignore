@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.superpowers/
+.pytest_cache/
+examples/_preview/
+*.egg-info/
+.venv/
+examples/example.pptx

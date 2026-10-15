@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (32 skills)
+## Skills Catalog (33 skills)
 
 ### Research & Intelligence
 
@@ -76,6 +76,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[narrative-deck](skills/narrative-deck/)** | "build a pitch deck", "narrative deck", "investor deck" | Storyboard-first deck in 3 modes: Outrage (BPOs), Empathy (enterprise), Paradigm (investors) |
 | **[shadcn-deck](skills/shadcn-deck/)** | "create a deck for [client]", "branded presentation", "clean slides" | Polished .pptx with shadcn/Tailwind design system + client brand theming |
 | **[anyreach-deck-pptx](skills/anyreach-deck-pptx/)** | "build a pptx deck", "editable PowerPoint", "editorial pptx" | Native editable PowerPoint via python-pptx — Fraunces serif, cream + ink alternation, indigo + lime accents |
+| **[status-deck](skills/status-deck/)** | "build a status deck", "JSC deck", "steering committee deck", "CXO deck" | Native editable PowerPoint via python-pptx: action titles, KPI tiles, schedule, progress and RAG infographics, formula appendix, checked numbers and read-back |
 
 ### BPO Outcomes-Based ROI Pitch
 
