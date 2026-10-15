@@ -56,6 +56,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Build a narrative pitch deck (storyboard-first framework) | `skills/narrative-deck/` |
 | Create a polished shadcn-style branded presentation | `skills/shadcn-deck/` |
 | Build an editorial native PowerPoint (.pptx) using Anyreach design system | `skills/anyreach-deck-pptx/` |
+| Build a status, progress or steering committee (JSC, CXO) deck as an editable .pptx | `skills/status-deck/` |
 
 ### BPO Outcomes-Based ROI Pitch
 

@@ -1,0 +1,115 @@
+meta:
+  title: "Programme status"
+  parties: ["Anyreach", "Northwind"]
+  date: "19 August 2026"
+  status: amber
+  footer: "Anyreach x Northwind"
+  confidential: true
+
+executive_summary:
+  headline: "Northwind support agent is on track for phase one go live"
+  status: amber
+  points:
+    - "Built and tested: order status and returns intents are live in staging."
+    - "Blocker: loyalty lookup needs a data feed from Northwind."
+    - "Phase one go live holds if the feed lands this week."
+    - "Escalation path signed off and wired to a live agent."
+  visual: none
+
+slides:
+  - type: kpi_tiles
+    title: "Programme at a glance"
+    tiles:
+      - value: "6"
+        label: "Intents built"
+        sub: "of 9 planned"
+      - value: "65%"
+        label: "Projected containment"
+        sub: "phase one estimate, not yet measured"
+      - value: "3"
+        label: "Open decisions"
+      - value: "12"
+        label: "Days to go live"
+
+  - type: gantt
+    title: "Delivery plan"
+    eyebrow: "Roadmap"
+    week_axis:
+      labels: ["1 Sep", "8 Sep", "15 Sep", "22 Sep", "29 Sep", "6 Oct", "13 Oct", "20 Oct", "27 Oct", "3 Nov"]
+    phases:
+      - name: "Phase 1"
+        note: "Core intents, launch"
+        bars:
+          - {start_week: 0, span: 3, kind: dev, label: "Order status and returns"}
+          - {start_week: 3, span: 2, kind: test, label: "QA and call scripts"}
+          - {start_week: 5, span: 1, kind: live, label: "Go live"}
+      - name: "Phase 2"
+        note: "Returns and refunds"
+        bars:
+          - {start_week: 4, span: 2, kind: dev, label: "Refund flows"}
+          - {start_week: 6, span: 2, kind: test, label: "QA"}
+          - {start_week: 8, span: 1, kind: live, label: "Live"}
+      - name: "Phase 3"
+        note: "Full coverage"
+        bars:
+          - {start_week: 6, span: 2, kind: dev, label: "Loyalty and account"}
+          - {start_week: 8, span: 1, kind: test, label: "QA"}
+          - {start_week: 9, span: 1, kind: live, label: "Live"}
+    here_week: 2
+    gates:
+      - {week: 5, label: "Phase 1 live"}
+      - {week: 8, label: "Phase 2 live"}
+      - {week: 9, label: "Full coverage live"}
+    legend: "Solid bars are development, pale bars are testing, green bars are live"
+
+  - type: progress_bars
+    title: "Build and test progress"
+    items:
+      - {label: "Order status", build: 100, tested: 100, note: "done"}
+      - {label: "Returns", build: 100, tested: 80, note: "in test"}
+      - {label: "Loyalty lookup", build: 60, tested: 0, note: "waiting on data feed"}
+
+  - type: decisions
+    title: "Decisions log"
+    rows:
+      - item: "Escalation path"
+        decision: "Agent transfers to a live agent after one failed attempt."
+        recorded: "12 August 2026"
+        status: "recorded"
+      - item: "Promo code reissue"
+        decision: "Agent may reissue a promo code once per call."
+        recorded: "14 August 2026"
+        status: "recorded"
+      - item: "Loyalty data feed"
+        decision: "Owner and date not yet set."
+        recorded: ""
+        status: "pending"
+
+  - type: table
+    title: "Open asks"
+    columns: ["Ask", "Owner", "Needed by"]
+    rows:
+      - ["Loyalty data feed", "Northwind data team", "22 August 2026"]
+      - ["Sign off on escalation wording", "Northwind support lead", "20 August 2026"]
+
+  - type: progress_pie
+    title: "Phase one containment"
+    percent: 65
+    label: "projected, not yet measured"
+
+appendix:
+  - type: table
+    title: "Call volume by category"
+    columns: ["Category", "Calls", "Share"]
+    rows:
+      - ["Order status", "1200", "40%"]
+      - ["Returns", "900", "30%"]
+      - ["Loyalty", "450", "15%"]
+      - ["Other", "450", "15%"]
+
+  - type: bar
+    title: "Weekly call volume"
+    categories: ["Wk1", "Wk2", "Wk3", "Wk4"]
+    series:
+      - {name: "Calls", values: [500, 520, 610, 590]}
+    mode: grouped
