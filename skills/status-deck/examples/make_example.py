@@ -6,6 +6,9 @@ Run from the repo root:
 Writes examples/example.pptx.
 """
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # run without installing the package
 
 from status_deck.brief import load_brief
 from status_deck.build import build_deck
