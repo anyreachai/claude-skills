@@ -26,6 +26,7 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Psychoanalyze stakeholders from a call transcript | `skills/calls/` (mode 3: psychoanalysis) |
 | Send a meeting recap email to attendees | `skills/meeting-recap-email/` |
 | Turn a discovery call/notes into an interactive JSX project dashboard | `skills/discovery-dashboard/` |
+| Run the discovery-to-proposal workflow for a BPO, partner, or client program | `skills/discovery-to-proposal/` |
 
 ### Legal & Contracts
 
@@ -47,6 +48,8 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Generate the 5-sheet Consumer Intelligence XLSX workbook companion | `skills/consumer-intelligence-xlsx/` |
 | Score Richard's AI fluency across 5 roles × 4 levels (JSX scorecard) | `skills/ai-fluency-assessment/` |
 | Generate or update the monthly Anyreach financial health report (PDF + JSX dashboard + Cowork config) | `skills/anyreach-financial-report/` |
+| Build a prospect-branded Portfolio CX Intelligence Brief for a multi-brand enterprise | `skills/portfolio-cx-brief/` |
+| Compare customer reviews with live-call outcomes in a CX artifact | `skills/reviews-vs-live-calls/` |
 
 ### Content & Presentations
 
@@ -57,14 +60,16 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | Create a polished shadcn-style branded presentation | `skills/shadcn-deck/` |
 | Build an editorial native PowerPoint (.pptx) using Anyreach design system | `skills/anyreach-deck-pptx/` |
 | Build a status, progress or steering committee (JSC, CXO) deck as an editable .pptx | `skills/status-deck/` |
+| Turn dense source material into a scannable visual brief | `skills/visual-brief/` |
 
-### BPO Outcomes-Based ROI Pitch
+### BPO Partner Pitch & Outcomes-Based ROI
 
 | If the user wants to... | Use this skill |
 |---|---|
 | Generate a 3-page ROI brief PDF for a BPO pitching outcomes-based AI + human pricing to their end-client | `skills/bpo-roi-brief/` |
 | Generate the 4-tab Excel workbook (formula-driven financial model) backing the ROI brief | `skills/bpo-roi-model/` |
 | Generate the internal-only Word briefing (talking points, margin profile, red lines) for the BPO's sales/ops team | `skills/bpo-roi-internal-briefing/` |
+| Build the three-play Anyreach partner pitch deck for a BPO | `skills/bpo-partner-pitch-deck/` |
 
 ### GTM Stack Audit (BPO Partner Onboarding)
 
@@ -79,6 +84,13 @@ Use this table to identify which skill to use. Read the skill's `SKILL.md` befor
 | If the user wants to... | Use this skill |
 |---|---|
 | Build a video in React using Remotion best practices | `skills/remotion/` |
+
+### Websites
+
+| If the user wants to... | Use this skill |
+|---|---|
+| Design or update an Anyreach marketing site using its established design system | `skills/anyreach-web-design/` |
+| Build or redesign a motion-driven product marketing website end to end | `skills/product-site-framework/` |
 
 ### DevOps
 

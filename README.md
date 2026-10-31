@@ -26,7 +26,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 
 ---
 
-## Skills Catalog (33 skills)
+## Skills Catalog (40 skills)
 
 ### Research & Intelligence
 
@@ -46,6 +46,7 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[calls](skills/calls/)** | "analyze this call", "score this meeting", "call debrief" | Branded PDF — sentiment, engagement, seller performance, psychoanalysis, inflection analysis |
 | **[meeting-recap-email](skills/meeting-recap-email/)** | "recap that meeting", "send a follow-up", "email the recap" | Drafted email to attendees via Gmail/message_compose |
 | **[discovery-dashboard](skills/discovery-dashboard/)** | "turn this discovery into a dashboard", "deal-on-a-page", "project map from the transcript" | Single-file JSX dashboard — overview, stakeholders, pain/value, scope, decision path, risks |
+| **[discovery-to-proposal](skills/discovery-to-proposal/)** | "run discovery", "scope a BPO program", "turn discovery into a proposal" | Discovery workflow, economics, feasibility, human-vs-AI design, pilot proposal, screenshare brief |
 
 ### Legal & Contracts
 
@@ -67,6 +68,8 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[consumer-intelligence-xlsx](skills/consumer-intelligence-xlsx/)** | "consumer intelligence xlsx", "review intelligence workbook", "companion xlsx" | 5-sheet workbook — review summary, third-party, employee, benchmarking, competitor deep dives |
 | **[ai-fluency-assessment](skills/ai-fluency-assessment/)** | "AI fluency self-assessment", "grade my AI usage", "where do I stand on AI" | Single JSX artifact — 5×4 matrix scorecard, radar chart, evidence + next moves |
 | **[anyreach-financial-report](skills/anyreach-financial-report/)** | "update the financials", "regenerate the report", "what's our runway", "what's our burn" | Monthly financial health report — 4-5 page ReportLab PDF + JSX dashboard + Cowork config |
+| **[portfolio-cx-brief](skills/portfolio-cx-brief/)** | "portfolio CX brief", "multi-brand CX intelligence" | Prospect-branded deck combining review intelligence, IVR benchmarks, and live AI demos for each brand |
+| **[reviews-vs-live-calls](skills/reviews-vs-live-calls/)** | "reviews vs. live calls", "compare CX reviews and call outcomes" | Animated comparison artifact connecting review ratings with live-call resolution evidence |
 
 ### Content & Presentations
 
@@ -77,14 +80,16 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | **[shadcn-deck](skills/shadcn-deck/)** | "create a deck for [client]", "branded presentation", "clean slides" | Polished .pptx with shadcn/Tailwind design system + client brand theming |
 | **[anyreach-deck-pptx](skills/anyreach-deck-pptx/)** | "build a pptx deck", "editable PowerPoint", "editorial pptx" | Native editable PowerPoint via python-pptx — Fraunces serif, cream + ink alternation, indigo + lime accents |
 | **[status-deck](skills/status-deck/)** | "build a status deck", "JSC deck", "steering committee deck", "CXO deck" | Native editable PowerPoint via python-pptx: action titles, KPI tiles, schedule, progress and RAG infographics, formula appendix, checked numbers and read-back |
+| **[visual-brief](skills/visual-brief/)** | "make this visual", "high-level brief", "turn this into a deck-like page" | Scannable single-file HTML scroll-deck with claim headlines, charts or diagrams, and restrained motion |
 
-### BPO Outcomes-Based ROI Pitch
+### BPO Partner Pitch & Outcomes-Based ROI
 
 | Skill | Trigger Phrases | Output |
 |---|---|---|
 | **[bpo-roi-brief](skills/bpo-roi-brief/)** | "BPO ROI brief", "outcomes-based pricing brief", "AI replacement ROI", "partner pitch brief" | 3-page landscape PDF — current vs. future state, outcome definitions, lighthouse pilot proposal |
 | **[bpo-roi-model](skills/bpo-roi-model/)** | "ROI model", "savings model", "pricing model in Excel", "BPO ROI xlsx", "editable savings calculator" | 4-tab formula-driven Excel workbook — Executive Summary, Current State, Proposed Model, Assumptions |
 | **[bpo-roi-internal-briefing](skills/bpo-roi-internal-briefing/)** | "internal briefing", "sales team briefing", "talking points doc", "margin profile doc", "red lines doc" | Internal-only Word doc — talking points, margin profile, red lines, intel findings |
+| **[bpo-partner-pitch-deck](skills/bpo-partner-pitch-deck/)** | "BPO partner pitch deck", "pitch Anyreach to a BPO" | Three-play partner deck covering IVR Swarm, AnyCRM, and BPOIndex |
 
 ### GTM Stack Audit (BPO Partner Onboarding)
 
@@ -99,6 +104,13 @@ Claude Code automatically picks up skills from `~/.claude/skills/` and commands 
 | Skill | Trigger Phrases | Output |
 |---|---|---|
 | **[remotion](skills/remotion/)** | "build a Remotion video", "video composition in React" | Remotion best-practices guidance — composition, animation, rendering |
+
+### Websites
+
+| Skill | Trigger Phrases | Output |
+|---|---|---|
+| **[anyreach-web-design](skills/anyreach-web-design/)** | "update anyreach.ai", "design an Anyreach marketing site" | Anyreach marketing-site guidance with brand tokens, shared components, motion, and reusable assets |
+| **[product-site-framework](skills/product-site-framework/)** | "build a product site", "redesign this product website" | End-to-end motion-driven marketing website plan covering copy, layout, visuals, build, and QA |
 
 ### DevOps
 
@@ -153,6 +165,8 @@ claude-skills/
 │   ├── ai-fluency-assessment/             # 5×4 AI fluency scorecard
 │   ├── anyreach-deck-pptx/                # Editorial native PPTX decks
 │   ├── anyreach-funnel-analysis/          # Mixpanel funnel analysis
+│   ├── anyreach-web-design/               # Anyreach marketing-site design system
+│   ├── bpo-partner-pitch-deck/            # Three-play BPO partner pitch deck
 │   ├── bpo-roi-brief/                      # BPO ROI pitch PDF (3-page)
 │   ├── bpo-roi-internal-briefing/          # BPO ROI internal talking-points Word doc
 │   ├── bpo-roi-model/                      # BPO ROI 4-tab Excel financial model
@@ -167,6 +181,7 @@ claude-skills/
 │   ├── demo-bot-usage-report/             # Bot usage report from CSV
 │   ├── deploy-intel/                      # Cloud Run deployment
 │   ├── discovery-dashboard/               # JSX project dashboard from discovery
+│   ├── discovery-to-proposal/              # BPO discovery-to-proposal workflow
 │   ├── gtm-audit-app/                     # GTM audit → JSX prototype
 │   ├── gtm-audit-pdf/                     # GTM audit → editorial PDF brief
 │   ├── gtm-stack-audit/                   # Cross-tool BPO GTM audit
@@ -175,11 +190,15 @@ claude-skills/
 │   ├── maturity-assessment/               # Ops maturity scoring
 │   ├── meeting-recap-email/               # Meeting follow-up emails
 │   ├── narrative-deck/                    # Pitch deck storyboarding
+│   ├── portfolio-cx-brief/                 # Multi-brand Portfolio CX Intelligence deck
 │   ├── proposal-sow-generator/            # Proposal & SoW PDFs
+│   ├── product-site-framework/             # Product marketing-site framework
 │   ├── remotion/                          # Remotion (React video) guidance
+│   ├── reviews-vs-live-calls/              # Reviews and live-call comparison artifact
 │   ├── richard-thought-leadership/        # Thought leadership content
 │   ├── shadcn-deck/                       # Branded presentations
-│   └── stakeholder-intel/                 # Person research PDFs
+│   ├── stakeholder-intel/                 # Person research PDFs
+│   └── visual-brief/                       # Scannable visual-summary HTML briefs
 └── commands/
     ├── blog-audit.md                      # /blog-audit
     ├── burn-check.md                      # /burn-check
